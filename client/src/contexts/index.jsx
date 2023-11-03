@@ -7,12 +7,21 @@ const ExampleContext = createContext();
 export const ExampleProvider = ({ children }) => {
   //const [user, setUser] = useState();
   const [exampleState, setExampleState] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userID, setUserID] = useState(0);
+  const [username, setUsername] = useState('');
 
   return (
     <ExampleContext.Provider
       value={{
         exampleState,
         setExampleState,
+        isLoggedIn,
+        setIsLoggedIn,
+        userID,
+        setUserID,
+        username,
+        setUsername,
       }}
     >
       {children}
